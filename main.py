@@ -3,6 +3,11 @@ from fastapi.staticfiles import StaticFiles
 from database import engine, Base
 from contextlib import asynccontextmanager
 from routers import posts, users
+from datetime import timedelta
+from fastapi.security import OAuth2PasswordRequestForm
+from sqlalchemy import func
+from auth import create_access_token, hash_password, oauth2_scheme, verify_access_token, verify_password
+from config import settings
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
