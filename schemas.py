@@ -26,7 +26,7 @@ class PostBase(BaseModel):
     content: str = Field(min_length=1, max_length=100)
 
 class PostCreate(PostBase):
-    user_id: int # Temporary 
+    pass
 
 class PostResponse(PostBase):
     model_config = ConfigDict(from_attributes=True)
